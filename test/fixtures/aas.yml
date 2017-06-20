@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aclass: MyString
+  segment: MyString
+  sub_segment: MyString
+
+two:
+  aclass: MyString
+  segment: MyString
+  sub_segment: MyString

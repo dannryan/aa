@@ -1,0 +1,28 @@
+// Place all the styles related to the Aas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background-color: white;
+    margin: 20px;
+    font-family: Arial;
+}
+h1 {
+    margin: 20px 0 20 0px;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    width: 100%;
+}
+table thead th {
+    white-space: pre-line;
+    vertical-align: bottom;
+    background-color: rgb(187, 224, 227);
+    font-weight: bold;
+}
+.segment {
+    font-weight: bold;
+    color: #000;
+}

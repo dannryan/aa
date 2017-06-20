@@ -1,0 +1,1 @@
+json.array! @aas, partial: 'aas/aa', as: :aa

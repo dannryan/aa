@@ -1,0 +1,29 @@
+<%= form_for(@aa) do |f| %>
+  <% if @aa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aa.errors.count, "error") %> prohibited this aa from being saved:</h2>
+
+      <ul>
+      <% @aa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :aclass %><br>
+    <%= f.text_field :aclass %>
+  </div>
+  <div class="field">
+    <%= f.label :segment %><br>
+    <%= f.text_field :segment %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_segment %><br>
+    <%= f.text_field :sub_segment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
