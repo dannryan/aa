@@ -1,0 +1,5 @@
+     <%= @client.holdings.each do |holding| %>
+      <tr>
+        <td><%= holding.name %></td>
+      </tr>
+    <% end %>

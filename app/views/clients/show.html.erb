@@ -5,8 +5,30 @@
 
 <p>
   <strong>Holdings:</strong>
-<!--  %= @client.holding %> -->
+
+</p>
+<tbody>
+     <% @client.holdings.each do |holding| %>
+     <%= holding.name %>
+     <% end %>
+
+</tbody>
+
+<p>
+<h2>New Holding</h2>
+    <%= form_for Holding.new do |f| %>
+    
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  <%= f.submit %>
+  </div>
+
+
+<% end %>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<p>
+<%= link_to 'Edit This Client Info ', edit_client_path(@client) %> |
+<%= link_to 'Back to Client List', clients_path %>
+</p>
