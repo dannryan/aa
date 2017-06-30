@@ -17,10 +17,10 @@
 <p>
 <h2>New Holding</h2>
     <%= form_for Holding.new do |f| %>
-    
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
+    <%= f.hidden_field :client_id, :value => @client.id %>
   <%= f.submit %>
   </div>
 

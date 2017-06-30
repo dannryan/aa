@@ -3,3 +3,11 @@
         <td><%= holding.name %></td>
       </tr>
     <% end %>
+    
+    
+<tbody>
+     <% @client.holdings.each do |holding| %>
+     <%= holding.name %>
+     <% end %>
+
+</tbody>
