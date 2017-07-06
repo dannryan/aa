@@ -1,13 +1,14 @@
-     <%= @client.holdings.each do |holding| %>
-      <tr>
-        <td><%= holding.name %></td>
-      </tr>
-    <% end %>
-    
-    
-<tbody>
-     <% @client.holdings.each do |holding| %>
-     <%= holding.name %>
-     <% end %>
 
-</tbody>
+Total issue:
+<%= Holding.where(:client_id => @client).sum(:value)  %>
+
+<td><%= number_with_delimiter(Holding.where(:client_id => @client).sum(:value))  %></td>
+
+
+
+
+<br />
+         <%= form_for holding.new do |f| %>
+         <%= f.label :value, "Market Value" %>
+         <%= f.number_field :value %>
+         <% end %>

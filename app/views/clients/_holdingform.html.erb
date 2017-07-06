@@ -1,21 +1,8 @@
-<%= form_for(@holding) do |f| %>
-  <% if @holding.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@holding.errors.count, "error") %> prohibited this holding from being saved:</h2>
-
-      <ul>
-      <% @holding.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 <h2>New Holding</h2>
+    <%= form_for Holding.new do |f| %>
   <div class="field">
-    <%= f.label :client_id %>
-    <%= f.collection_select :client_id, Client.select(:id),:id,:id, include_blank: true %><br />
-    <%= f.label :name, "Asset Name" %>
-    <%= f.text_field :name %><br />
+    <%= f.label :name %>
+    <%= f.text_field :name %>
     <%= f.label :location %>
     <%= f.text_field :location %><br />
     <%= f.label :aclass, "Asset Class" %>
@@ -26,8 +13,7 @@
     <%= f.collection_select :sub_segment, Aa.select('DISTINCT sub_segment'),:sub_segment,:sub_segment, include_blank: true %><br />
     <%= f.label :value, "Market Value" %>
     <%= f.number_field :value %>
-    <br />
+    <%= f.hidden_field :client_id, :value => @client.id %><br />
   <%= f.submit %>
   </div>
-  
 <% end %>

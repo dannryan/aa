@@ -1,6 +1,5 @@
 class HoldingsController < ApplicationController
   before_action :set_holding, only: [:show, :edit, :update, :destroy]
-
   # GET /holdings
   # GET /holdings.json
   def index
@@ -69,6 +68,6 @@ class HoldingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def holding_params
-      params.require(:holding).permit(:name, :client_id, :aclass)
+      params.require(:holding).permit(:name, :client_id, :location, :aclass, :segment, :sub_segment, :value)
     end
 end

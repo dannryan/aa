@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
-<%= @holding.client_id %><br />
 <%= @holding.name %><br />
 <%= @holding.aclass %><br />
 <%= @holding.segment %><br />
 <%= @holding.sub_segment %><br />
-<%= link_to 'Edit', edit_holding_path(@holding) %> |
-<%= link_to 'Back', holdings_path %>
+<%= number_with_delimiter(@holding.value) %><br />
+<p><%= link_to 'Edit This Holding', edit_holding_path(@holding) %> |
+<%= link_to 'View this Client', client_path(@holding.client_id) %></p>
