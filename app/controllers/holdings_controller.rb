@@ -27,7 +27,7 @@ class HoldingsController < ApplicationController
 
     respond_to do |format|
       if @holding.save
-        format.html { redirect_to @holding, notice: 'Holding was successfully created.' }
+        format.html { redirect_to :back, notice: 'Holding was successfully created.' }
         format.json { render :show, status: :created, location: @holding }
       else
         format.html { render :new }

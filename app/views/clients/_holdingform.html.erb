@@ -6,9 +6,9 @@
     <%= f.label :location %>
     <%= f.text_field :location %><br />
     <%= f.label :aclass, "Asset Class" %>
-    <%= f.collection_select :aclass, Aa.select('DISTINCT aclass'),:aclass,:aclass, include_blank: true %><br />
+    <%= f.collection_select :aclass, Aa.select('DISTINCT aclass'),:aclass,:aclass, include_blank: true %>
     <%= f.label :segment %>
-    <%= f.collection_select :segment, Aa.select('DISTINCT segment'),:segment,:segment, include_blank: true %><br />
+    <%= f.collection_select :segment, Aa.select('DISTINCT segment'),:segment,:segment, include_blank: true %>
     <%= f.label :sub_segment, "Sub-Segment" %>
     <%= f.collection_select :sub_segment, Aa.select('DISTINCT sub_segment'),:sub_segment,:sub_segment, include_blank: true %><br />
     <%= f.label :value, "Market Value" %>

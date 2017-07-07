@@ -8,7 +8,7 @@
       <th>Client</th>
       <th>Asset Name</th>
       <th>Value</th>
-      <th colspan="3">Action</th>
+      <th colspan="2">Action</th>
     </tr>
   </thead>
 
@@ -18,9 +18,8 @@
         <td><%= Client.where("id = ?", holding.client_id).pluck(:lastname, :firstname).first.join(", ") %></td>
         <td><%= holding.name %></td>
         <td><%= number_with_delimiter(holding.value) %></td>
-        <td><%= link_to 'Show', holding %></td>
         <td><%= link_to 'Edit', edit_holding_path(holding) %></td>
-        <td><%= link_to 'Delete', holding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', holding, method: :delete, data: { confirm: 'Are you sure you want to delete this holding?' } %></td>
       </tr>
     <% end %>
   </tbody>

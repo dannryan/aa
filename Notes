@@ -7,8 +7,7 @@ Total issue:
 
 
 
-<br />
-         <%= form_for holding.new do |f| %>
-         <%= f.label :value, "Market Value" %>
-         <%= f.number_field :value %>
-         <% end %>
+<%= form_for Holding.new, :url => { :action => "custom_create" }, :html => { :method => "put" } do |f| %>
+        
+        format.html { redirect_to @holding, notice: 'Holding was successfully created.' }
+        format.json { render :show, status: :created, location: @holding }
