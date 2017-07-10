@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629205829) do
+ActiveRecord::Schema.define(version: 20170710182906) do
 
   create_table "aas", force: :cascade do |t|
     t.string   "aclass"
@@ -35,9 +35,11 @@ ActiveRecord::Schema.define(version: 20170629205829) do
     t.string   "segment"
     t.string   "sub_segment"
     t.integer  "value"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "client_id"
+    t.integer  "recvalue"
+    t.integer  "recommendation"
   end
 
 end

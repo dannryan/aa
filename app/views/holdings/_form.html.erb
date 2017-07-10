@@ -25,7 +25,9 @@
     <%= f.label :sub_segment, "Sub-Segment" %>
     <%= f.collection_select :sub_segment, Aa.select('DISTINCT sub_segment'),:sub_segment,:sub_segment, include_blank: true %><br />
     <%= f.label :value, "Market Value" %>
-    <%= f.number_field :value %>
+    <%= f.number_field :value %><br />
+     <%= f.label :recommendation, "Change" %>
+    <%= f.number_field :recommendation %>
     <br />
   <%= f.submit %>
   </div>

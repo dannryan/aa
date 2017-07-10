@@ -68,6 +68,6 @@ class HoldingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def holding_params
-      params.require(:holding).permit(:name, :client_id, :location, :aclass, :segment, :sub_segment, :value)
+      params.require(:holding).permit(:name, :client_id, :location, :aclass, :segment, :sub_segment, :value, :recommendation, :recvalue)
     end
 end
