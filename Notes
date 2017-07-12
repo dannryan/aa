@@ -1,27 +1,24 @@
-
-Total issue:
-<%= Holding.where(:client_id => @client).sum(:value)  %>
-
-<td><%= number_with_delimiter(Holding.where(:client_id => @client).sum(:value))  %></td>
-
-
-
-
-<%= form_for Holding.new, :url => { :action => "custom_create" }, :html => { :method => "put" } do |f| %>
-        
-        format.html { redirect_to @holding, notice: 'Holding was successfully created.' }
-        format.json { render :show, status: :created, location: @holding }
-        
-
-
-
-
-
   def clearchanges
       @clearchanges = Holding.where(client_id => id).update_all("recommendation = 4");
   end
   
-  
-  
   <%= link_to 'Clear Changes', '@client.holdings.clear, data: { confirm: 'Are you sure?' } %> | 
   
+  
+  
+  
+Backup of Recommendation:  
+<td class="right"><%= number_with_delimiter(holding.recommendation) %></td>
+
+
+Getting BiP to Work
+<td class="right"><%= best_in_place @holding, :recommendation %></td>
+
+<td class="right"><%= best_in_place @holding, :id, :url => client_holding_path(@client, '27')  %></td>
+
+
+<td class="right"><%= number_with_delimiter(holding.value) %></td>
+
+
+This Works:
+<tr><td>TEST</td><td><%= best_in_place @client, :firstname %></td></tr>     

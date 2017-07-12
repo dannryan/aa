@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :holdings
+  get "clients/:id/presentation" => "clients#present"
   resources :holdings
   resources :aas 
-  resources :clients
-  resources :holdings
+  resources :clients do
+    resources :holdings
+  end
+
   root 'clients#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -3,7 +3,7 @@
   <h1><%= @client.firstname %> <%= @client.lastname %></h1>
   
 
-<h2 align="center">Current Asset Allocation</h2>
+<h2 align="center">Proposed Asset Allocation</h2>
 <table>
     <thead>
      <tr><th>Asset Name</th>
@@ -30,17 +30,13 @@
          <td class="right"><%= number_with_delimiter(holding.value) %></td>
          <td class="right"><%= number_to_percentage((holding.value.to_f * 100)/(@client.ctotal.to_f), precision: 2) %></td>
          
-         <td class="right"><%= best_in_place holding, :recommendation,
-            path: client_path(@client.id), type: :input, 
-            param: "client[holding_attributes][id]=#{holding.id}&client[holding_attributes]"  %></td>
-    
+         <td class="right"><%= number_with_delimiter(holding.recommendation) %></td>
+         
          <td class="right"><%= number_with_delimiter(holding.recvalue) %></td>
          <td class="right"><%= number_to_percentage((holding.recvalue.to_f * 100)/(@client.rtotal.to_f), precision: 2) %></td>
      </tr>
      <% end %>
      
-
-
 <tr class="total"><td  colspan="5">TOTAL</td>
 <td><%= number_with_delimiter(@client.ctotal) %></td>
 <td></td>
@@ -49,18 +45,5 @@
 <td></td>
 </tr>
 
-
-
 </tbody>
 </table>
-
-<button id="hideButton">Add Asset</button>
-<div id="hideForm">
-<%= render 'holdingform' %>
-</div>
-
-<p>
-<%= link_to 'Edit This Client Info', edit_client_path(@client) %> | 
-<%= link_to 'View Client Presentation', client_path + '/presentation/' %> | 
-<%= link_to 'Back to Client List', clients_path %>
-</p>

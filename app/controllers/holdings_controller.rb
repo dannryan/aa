@@ -48,6 +48,7 @@ class HoldingsController < ApplicationController
         format.json { render json: @holding.errors, status: :unprocessable_entity }
       end
     end
+    respond_with @client
   end
 
   # DELETE /holdings/1
